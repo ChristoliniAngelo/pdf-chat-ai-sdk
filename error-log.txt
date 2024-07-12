@@ -1,0 +1,9 @@
+Error: Metadata value must be a string, number, boolean or list of strings, got '{"lines":{"from"...' for field 'loc'
+Stack trace:
+PineconeBadRequestError: Metadata value must be a string, number, boolean or list of strings, got '{"lines":{"from"...' for field 'loc'
+    at mapHttpStatusError (e:\pdf-chat-ai-sdk\node_modules\@pinecone-database\pinecone\dist\errors\http.js:179:20)
+    at <anonymous> (e:\pdf-chat-ai-sdk\node_modules\@pinecone-database\pinecone\dist\errors\handling.js:65:50)
+    at step (e:\pdf-chat-ai-sdk\node_modules\@pinecone-database\pinecone\dist\errors\handling.js:33:23)
+    at Object.next (e:\pdf-chat-ai-sdk\node_modules\@pinecone-database\pinecone\dist\errors\handling.js:14:53)
+    at fulfilled (e:\pdf-chat-ai-sdk\node_modules\@pinecone-database\pinecone\dist\errors\handling.js:5:58)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)

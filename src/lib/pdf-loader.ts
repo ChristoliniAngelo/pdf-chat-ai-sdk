@@ -7,7 +7,6 @@ export async function getChunkedDocsFromPDF() {
     const loader = new PDFLoader(env.PDF_PATH);
     const docs = await loader.load();
 
-    // From the docs https://www.pinecone.io/learn/chunking-strategies/
     const textSplitter = new RecursiveCharacterTextSplitter({
       chunkSize: 1000,
       chunkOverlap: 200,
@@ -15,9 +14,15 @@ export async function getChunkedDocsFromPDF() {
 
     const chunkedDocs = await textSplitter.splitDocuments(docs);
 
-    return chunkedDocs;
+    // Add unique IDs to each chunk
+    const chunkedDocsWithId = chunkedDocs.map((doc, index) => ({
+      ...doc,
+      id: `chunk_${index + 1}`,
+    }));
+
+    return chunkedDocsWithId;
   } catch (e) {
     console.error(e);
-    throw new Error("PDF docs chunking failed !");
+    throw new Error("PDF docs chunking failed!");
   }
 }

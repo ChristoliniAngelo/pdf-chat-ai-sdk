@@ -33,7 +33,7 @@ export async function callChain({ question, chatHistory }: callChainArgs) {
         questionGeneratorTemplate: STANDALONE_QUESTION_TEMPLATE,
         returnSourceDocuments: true, //default 4
         questionGeneratorChainOptions: {
-          llm: nonStreamingModel,
+          llm: streamingModel,
         },
       }
     );
